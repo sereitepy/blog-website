@@ -1,0 +1,16 @@
+{
+  "homePage": {
+    "title": "សួរស្តី​ពិភពលោក!"
+  },
+  "header": {
+    "languageSwitcher": {
+      "khmer": "ខ្មែរ",
+      "english": "អង់គ្លេស"
+    },
+    "themeSwitcher": {
+      "light": "ភ្លឺ",
+      "dark": "ងងឹត",
+      "system": "ប្រព័ន្ធ"
+    }
+  }
+}

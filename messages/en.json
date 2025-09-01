@@ -1,0 +1,16 @@
+{
+  "homePage": {
+    "title": "Hello world!"
+  },
+  "header": {
+    "languageSwitcher": {
+      "khmer": "Khmer",
+      "english": "English"
+    },
+    "themeSwitcher": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  }
+}
