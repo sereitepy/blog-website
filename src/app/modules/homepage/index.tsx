@@ -55,14 +55,19 @@ export const HomePage = () => {
         'https://www.idcpc.gov.cn/english2023/ttxw_5749/202302/W020230728406753223084.png',
     },
   ]
+  const data = news.filter(
+    item =>
+      item.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchInput.toLowerCase())
+  )
   return (
     <div className='flex flex-col gap-5 items-center justify-center'>
       <SearchInput input={searchInput} setInput={setSearchInput} />
-      <div className='flex flex-col gap-5'>
-        <h3 className='font-bold text-xl hover:underline hover:underline-offset-4 cursor-pointer w-fit'>
+      <div className='flex flex-col gap-5 w-full'>
+        <h3 className='font-bold text-xl hover:underline hover:underline-offset-4 cursor-pointer w-fit flex items-baseline'>
           Recent Articles
         </h3>
-        <SmallCards news={news} searchInput={searchInput} />
+        <SmallCards news={data} />
       </div>
     </div>
   )
