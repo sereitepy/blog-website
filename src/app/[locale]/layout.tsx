@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Blog Page',
-  description: 'Blog Page that focuses on Khmer news',
+  title: "Len's Pro Media",
+  description: 'Media Page that focuses on Photography and Videography Articles',
 }
 
 interface Props {
@@ -46,8 +46,12 @@ export default async function RootLayout({ children, params }: Props) {
             enableSystem
             disableTransitionOnChange
           >
-            <Header locale={locale} />
-            <div className='px-10 py-5'>{children}</div>
+            <div className='dark:shadow-amber-200 shadow-xl'>
+              <Header locale={locale} />
+            </div>
+            <div className='px-18 py-5 bg-inner-background min-h-screen'>
+              {children}
+            </div>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
