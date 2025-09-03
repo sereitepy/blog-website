@@ -6,7 +6,7 @@ import { HomePage } from '../modules/homepage'
 export default function Home() {
   const t = useTranslations('homePage')
   return (
-    <div className='font-sans items-center justify-items-center min-h-screen'>
+    <div className='font-sans'>
       <main>
         <HomePage />
       </main>

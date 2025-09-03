@@ -12,8 +12,8 @@ interface HeaderProps {
 export const Header = ({ locale }: HeaderProps) => {
   const pathName = usePathname()
   return (
-    <header className='flex justify-between bg-inner-background items-center px-10 py-4 border-b-1 dark:border-white/20'>
-      <div className='w-20'>
+    <header className='flex justify-between bg-inner-background items-center px-20 py-4 max-w-[2050px] mx-auto'>
+      <div className='w-[20%]'>
         <Link href='/'>
           <Image
             src='/logo.png'
@@ -34,24 +34,24 @@ export const Header = ({ locale }: HeaderProps) => {
         </p>
         <p
           className={`hover:underline hover:underline-offset-4 ${
-            pathName === '/news' && 'underline underline-offset-4'
+            pathName === '/general' && 'underline underline-offset-4'
           }`}
         >
-          <Link href='/news'>News</Link>
+          <Link href='/general'>General Media</Link>
         </p>
         <p
           className={`hover:underline hover:underline-offset-4 ${
-            pathName === '/history' && 'underline underline-offset-4'
+            pathName === '/photography' && 'underline underline-offset-4'
           }`}
         >
-          <Link href='/history'>History</Link>
+          <Link href='/photography'>Photography</Link>
         </p>
         <p
           className={`hover:underline hover:underline-offset-4 ${
-            pathName === '/school' && 'underline underline-offset-4'
+            pathName === '/videography' && 'underline underline-offset-4'
           }`}
         >
-          <Link href='/school'>School</Link>
+          <Link href='/videography'>Videography</Link>
         </p>
         <p
           className={`hover:underline hover:underline-offset-4 ${
@@ -62,7 +62,7 @@ export const Header = ({ locale }: HeaderProps) => {
         </p>
       </div>
 
-      <div className='flex items-center gap-4 w-20'>
+      <div className='flex items-center gap-4 w-[20%]'>
         <LanguageSwitcher locale={locale} />
         <ThemeSwitcher />
       </div>

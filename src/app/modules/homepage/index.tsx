@@ -55,19 +55,63 @@ export const HomePage = () => {
         'https://www.idcpc.gov.cn/english2023/ttxw_5749/202302/W020230728406753223084.png',
     },
   ]
+  const video = [
+    {
+      id: 'brushsggyg',
+      title: 'Videography Basics',
+      description: 'Learn the fundamentals of videography.',
+      date: '2025-09-01',
+    },
+    {
+      id: 'xvcthryhy',
+      title: 'Advanced Editing Techniques',
+      date: '2025-09-01',
+      description: 'Take your editing skills to the next level.',
+    },
+    {
+      id: 'asdzxcyty',
+      title: 'Photography Composition',
+      date: '2025-09-01',
+      description: 'Master the art of composition in photography.',
+    },
+    {
+      id: 'qweasdzxc',
+      title: 'Lighting for Photos',
+      date: '2025-09-01',
+      description: 'Understand how to use lighting effectively.',
+    },
+    {
+      id: 'plmoknijn',
+      title: 'Camera Settings Explained',
+      date: '2025-09-01',
+      description: 'Get to know your camera settings inside out.',
+    },
+  ]
   const data = news.filter(
     item =>
       item.title.toLowerCase().includes(searchInput.toLowerCase()) ||
       item.description.toLowerCase().includes(searchInput.toLowerCase())
   )
+
+  const videoData = video.filter(
+    item =>
+      item.title.toLowerCase().includes(searchInput.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchInput.toLowerCase())
+  )
   return (
-    <div className='flex flex-col gap-5 items-center justify-center'>
+    <div className='flex flex-col gap-10 items-center justify-center max-w-[2050px] mx-auto'>
       <SearchInput input={searchInput} setInput={setSearchInput} />
       <div className='flex flex-col gap-5 w-full'>
         <h3 className='font-bold text-xl hover:underline hover:underline-offset-4 cursor-pointer w-fit flex items-baseline'>
           Recent Articles
         </h3>
-        <SmallCards news={data} />
+        <SmallCards data={data} />
+      </div>
+      <div className='flex flex-col gap-5 w-full'>
+        <h3 className='font-bold text-xl hover:underline hover:underline-offset-4 cursor-pointer w-fit flex items-baseline'>
+          Videography Articles
+        </h3>
+        <SmallCards data={videoData} />
       </div>
     </div>
   )

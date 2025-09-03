@@ -7,6 +7,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { setRequestLocale } from 'next-intl/server'
+import { Footer } from '../modules/footer'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -20,7 +21,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Len's Pro Media",
-  description: 'Media Page that focuses on Photography and Videography Articles',
+  description:
+    'Media Page that focuses on Photography and Videography Articles',
 }
 
 interface Props {
@@ -46,11 +48,14 @@ export default async function RootLayout({ children, params }: Props) {
             enableSystem
             disableTransitionOnChange
           >
-            <div className='dark:shadow-amber-200 shadow-xl'>
-              <Header locale={locale} />
-            </div>
-            <div className='px-18 py-5 bg-inner-background min-h-screen'>
-              {children}
+            <div className=''>
+              <div className='dark:shadow-amber-200 shadow-xl bg-inner-background border-b-1'>
+                <Header locale={locale} />
+              </div>
+              <div className='px-18 py-10 bg-inner-background'>{children}</div>
+              <footer className='bg-inner-background border-t-1'>
+                <Footer />
+              </footer>
             </div>
           </ThemeProvider>
         </NextIntlClientProvider>

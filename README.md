@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 [Inspo](https://dribbble.com/shots/18005065--Exploration-New-Layout-and-Artwork-for-My-Blog)
 
+[blog page](https://dribbble.com/shots/25731475-Blog-Page-Design)
+
 ## Getting Started
 
 First, run the development server:

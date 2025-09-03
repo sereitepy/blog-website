@@ -2,36 +2,40 @@ import { SearchX } from 'lucide-react'
 import Image from 'next/image'
 
 interface Articles {
-  id: number
+  id: number | string
   title: string
   description: string
-  date: string
-  image: string
+  date?: string
+  image?: string
 }
 
 interface NewsProp {
-  news: Articles[]
+  data: Articles[]
 }
 
-export function SmallCards({ news }: NewsProp) {
+export function SmallCards({ data }: NewsProp) {
   return (
     <div>
-      {news.length > 0 ? (
-        <div className='grid grid-cols-3 gap-4'>
-          {news.map(item => {
+      {data.length > 0 ? (
+        <div className='grid 2xl:grid-cols-3 gap-8 lg:grid-cols-2 grid-cols-1'>
+          {data.map(item => {
             return (
               <div key={item.id}>
-                <div className='flex gap-4 rounded-xl overflow-hidden hover:shadow-lg dark:shadow-md dark:hover:shadow-gray-700/80 transition-all duration-200 cursor-pointer'>
+                <div className='w-full flex gap-4 rounded-xl overflow-hidden hover:shadow-lg dark:shadow-md dark:hover:shadow-gray-700/80 transition-all duration-200 cursor-pointer'>
                   <Image
-                    src={item.image}
+                    src={
+                      item?.image ??
+                      'https://app.requestly.io/delay/5000/https://heroui.com/images/hero-card-complete.jpeg'
+                    }
                     alt={item.title}
                     width={100}
                     height={100}
                     className='object-cover w-30 h-auto'
                   />
-                  <div className='p-2 flex flex-col gap-2 line-clamp-3'>
+                  <div className='p-2 flex flex-col gap-2 line-clamp-3 py-2'>
                     <p className='text-xs/3 text-foreground'>{item.date}</p>
-                    <h2 className='font-semibold line-clamp-3'>{item.title}</h2>
+                    <h2 className='font-semibold line-clamp-2'>{item.title}</h2>
+                    <p className='text-sm line-clamp-2'>{item.description}</p>
                   </div>
                 </div>
               </div>
