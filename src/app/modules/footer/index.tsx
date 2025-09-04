@@ -33,15 +33,12 @@ export const Footer = () => {
   const date = new Date()
   let year = date.getFullYear()
   return (
-    <footer
-      className='bg-inner-background max-w-[2050px] mx-auto py-15 px-20'
-      
-    >
+    <footer className='bg-inner-background max-w-[2050px] mx-auto sm:py-15 sm:px-20 px-10 py-8'>
       <div className='flex flex-col gap-8'>
         {/* upper section */}
-        <div className='flex justify-between items-center'>
+        <div className='flex sm:flex-row flex-col gap-8 sm:gap-0 justify-between items-center'>
           {/* left section */}
-          <div className='flex flex-col gap-4 w-[45%] xl:w-[60%]'>
+          <div className='flex flex-col gap-4 sm:w-[45%] xl:w-[60%]'>
             <Image
               src='/logo.png'
               alt="Len's Pro Media Logo"
@@ -49,7 +46,7 @@ export const Footer = () => {
               height={55}
               className='h-auto w-15'
             />
-            <p className='text-xs w-[80%] lg:text-sm'>
+            <p className='text-xs sm:w-[80%] lg:text-sm'>
               Lens Pro Media, led by media expert Kimsour, offers photography
               and videography education to empower Cambodia's next generation
               with media knowledge.
@@ -62,23 +59,23 @@ export const Footer = () => {
           </div>
 
           {/* right side */}
-          <div className='grid grid-cols-3 gap-4 w-[55%] xl:w-[40%]'>
+          <div className='grid grid-cols-3 sm:gap-4 sm:w-[55%] xl:w-[40%]'>
             {footerLinks.map(item => {
               return (
                 <div
                   key={item.id}
-                  className='flex flex-col gap-2 cursor-pointer w-fit ml-auto'
+                  className='flex flex-col sm:gap-2 gap-1 cursor-pointer w-fit ml-auto'
                 >
-                  <h3 className='font-semibold text-base hover:underline hover:underline-offset-4'>
+                  <h3 className='font-semibold sm:text-base text-sm'>
                     {item.title}
                   </h3>
-                  <p className='text-xs hover:underline hover:underline-offset-4 lg:text-sm'>
+                  <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
                     {item.details}
                   </p>
-                  <p className='text-xs hover:underline hover:underline-offset-4 lg:text-sm'>
+                  <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
                     {item.software}
                   </p>
-                  <p className='text-xs hover:underline hover:underline-offset-4 lg:text-sm'>
+                  <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
                     {item.articles}
                   </p>
                 </div>
@@ -86,10 +83,10 @@ export const Footer = () => {
             })}
           </div>
         </div>
-        {/* under section */}
-        <div className='flex justify-between items-center text-xs'>
+        {/* lower section */}
+        <div className='flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center text-xs'>
           <div>&copy;&nbsp;{year} Lens Pro Media All rights reserved</div>
-          <div className='flex gap-4 items-center text-xs/3 cursor-pointer'>
+          <div className='flex gap-4 items-center sm:text-xs/3 text-[10px] cursor-pointer'>
             <p className='hover:underline hover:underline-offset-4'>
               Privacy Policy
             </p>

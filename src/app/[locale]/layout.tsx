@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Len's Pro Media",
+  title: 'Lens Pro Media',
   description:
     'Media Page that focuses on Photography and Videography Articles',
 }
@@ -48,11 +48,13 @@ export default async function RootLayout({ children, params }: Props) {
             enableSystem
             disableTransitionOnChange
           >
-            <div className=''>
+            <div>
               <div className='dark:shadow-amber-200 shadow-xl bg-inner-background border-b-1'>
                 <Header locale={locale} />
               </div>
-              <div className='px-18 py-10 bg-inner-background'>{children}</div>
+              <div className='px-9 sm:px-18 py-10 bg-inner-background'>
+                {children}
+              </div>
               <footer className='bg-inner-background border-t-1'>
                 <Footer />
               </footer>
