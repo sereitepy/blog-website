@@ -59,29 +59,29 @@ export const Footer = () => {
           </div>
 
           {/* right side */}
-          <div className='grid grid-cols-3 sm:gap-4 sm:w-[55%] xl:w-[40%]'>
-            {footerLinks.map(item => {
-              return (
-                <div
-                  key={item.id}
-                  className='flex flex-col sm:gap-2 gap-1 cursor-pointer w-fit ml-auto'
-                >
-                  <h3 className='font-semibold sm:text-base text-sm'>
-                    {item.title}
-                  </h3>
-                  <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
-                    {item.details}
-                  </p>
-                  <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
-                    {item.software}
-                  </p>
-                  <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
-                    {item.articles}
-                  </p>
-                </div>
-              )
-            })}
-          </div>
+            <div className='grid grid-cols-3 sm:gap-4 sm:w-[55%] xl:w-[40%]'>
+              {footerLinks.map(item => {
+                return (
+                  <div
+                    key={item.id}
+                    className='flex flex-col sm:gap-2 gap-1 cursor-pointer w-fit ml-auto'
+                  >
+                    <h3 className='font-semibold sm:text-base text-sm'>
+                      {item.title}
+                    </h3>
+                    <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
+                      {item.details}
+                    </p>
+                    <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
+                      {item.software}
+                    </p>
+                    <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
+                      {item.articles}
+                    </p>
+                  </div>
+                )
+              })}
+            </div>
         </div>
         {/* lower section */}
         <div className='flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center text-xs'>
