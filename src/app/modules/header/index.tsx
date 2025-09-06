@@ -21,7 +21,7 @@ export const Header = ({ locale }: HeaderProps) => {
   return (
     <div>
       {/* Full Header */}
-      <div className='hidden sm:block'>
+      <div className='hidden min-[770px]:block'>
         <header className='flex justify-between bg-inner-background items-center px-20 py-4 max-w-[2050px] mx-auto'>
           <div className='lg:w-20'>
             <Link href='/'>
@@ -34,7 +34,7 @@ export const Header = ({ locale }: HeaderProps) => {
               />
             </Link>
           </div>
-          <div className='flex min-[855px]:flex-row min-[855px]:justify-center min-[855px]:items-center min-[855px]:gap-6 flex-col gap-2 lg:text-sm text-xs font-semibold'>
+          <div className='flex justify-center items-center gap-6 lg:text-sm text-xs font-semibold'>
             <p
               className={`hover:underline hover:underline-offset-4 ${
                 pathName === '/' && 'underline underline-offset-4'
@@ -74,12 +74,12 @@ export const Header = ({ locale }: HeaderProps) => {
 
           <div className='flex items-center gap-4 lg:w-20'>
             <LanguageSwitcher locale={locale} />
-            <ThemeSwitcher align='end'/>
+            <ThemeSwitcher align='end' />
           </div>
         </header>
       </div>
       {/* Side Sheet Header for Mobile Screen */}
-      <div className='sm:hidden flex'>
+      <div className='min-[770px]:hidden max-[770px]:flex'>
         <div className='flex justify-between items-center px-9 py-4 max-w-[2050px] mx-auto w-full'>
           <div>
             <Sheet>
@@ -132,7 +132,7 @@ export const Header = ({ locale }: HeaderProps) => {
 
                   <SheetTitle className='py-5'>Theme Switcher</SheetTitle>
                   <div>
-                    <ThemeSwitcher align='start'/>
+                    <ThemeSwitcher align='start' />
                   </div>
                 </div>
               </SheetContent>
@@ -143,9 +143,9 @@ export const Header = ({ locale }: HeaderProps) => {
               <Image
                 src='/logo.png'
                 alt="Len's Pro Media Logo"
-                width={65}
-                height={55}
-                className='h-10 w-auto'
+                width={55}
+                height={45}
+                className='h-9 w-auto'
               />
             </Link>
           </div>

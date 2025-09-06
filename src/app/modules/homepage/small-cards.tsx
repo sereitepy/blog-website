@@ -17,7 +17,7 @@ export function SmallCards({ data }: NewsProp) {
   return (
     <div>
       {data.length > 0 ? (
-        <div className='grid 2xl:grid-cols-3 gap-8 min-[855px]:grid-cols-2 grid-cols-1'>
+        <div className='grid 2xl:grid-cols-3 gap-8 sm:grid-cols-2 grid-cols-1'>
           {data.map(item => {
             return (
               <div key={item.id}>

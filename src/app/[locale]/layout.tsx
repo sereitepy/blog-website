@@ -49,7 +49,7 @@ export default async function RootLayout({ children, params }: Props) {
             disableTransitionOnChange
           >
             <div>
-              <div className='dark:shadow-amber-200 shadow-xl bg-inner-background border-b-1'>
+              <div className='sticky -top-1 bg-inner-background border-b-1'>
                 <Header locale={locale} />
               </div>
               <div className='px-9 sm:px-18 py-10 bg-inner-background'>
