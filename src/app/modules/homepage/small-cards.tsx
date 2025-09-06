@@ -1,5 +1,6 @@
 import { SearchX } from 'lucide-react'
 import Image from 'next/image'
+import { useState } from 'react'
 
 interface Articles {
   id: number | string
@@ -14,6 +15,7 @@ interface NewsProp {
 }
 
 export function SmallCards({ data }: NewsProp) {
+  const [view, setView] = useState(true)
   return (
     <div>
       {data.length > 0 ? (
