@@ -7,7 +7,7 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import { Link, usePathname } from '@/i18n/navigation'
-import { ListIcon } from '@phosphor-icons/react/dist/ssr'
+import { ListIcon } from '@phosphor-icons/react/ssr'
 import Image from 'next/image'
 import { LanguageSwitcher } from '../language-switch'
 import { ThemeSwitcher } from '../theme-switch'

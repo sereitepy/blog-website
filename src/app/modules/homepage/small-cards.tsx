@@ -23,8 +23,8 @@ export function SmallCards({ data }: NewsProp) {
         <div className='grid 2xl:grid-cols-3 gap-8 sm:grid-cols-2 grid-cols-1'>
           {data.map(item => {
             return (
-              <Link href={`/articles/${item.id}`}>
-                <div key={item.id}>
+              <div key={item.id}>
+                <Link href={`/articles/${item.id}`}>
                   <div className='w-full flex sm:gap-4 gap-2 rounded-xl overflow-hidden hover:shadow-lg dark:shadow-md dark:hover:shadow-gray-700/80 dark:shadow-gray-800/50 shadow-sm sm:dark:shadow-inner-background sm:shadow-none transition-all duration-200 cursor-pointer'>
                     <Image
                       src={
@@ -48,8 +48,8 @@ export function SmallCards({ data }: NewsProp) {
                       </p>
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             )
           })}
         </div>

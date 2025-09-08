@@ -52,7 +52,7 @@ export default async function RootLayout({ children, params }: Props) {
               <div className='sticky -top-1 bg-inner-background border-b-1'>
                 <Header locale={locale} />
               </div>
-              <div className='px-9 sm:px-18 py-10 bg-inner-background'>
+              <div className='px-9 sm:px-20 py-10 bg-inner-background'>
                 {children}
               </div>
               <footer className='bg-inner-background border-t-1'>
