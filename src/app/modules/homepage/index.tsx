@@ -9,82 +9,87 @@ export const HomePage = () => {
   const news = [
     {
       id: 1,
-      title:
-        'Government refutes fabricated story of Sam Rainsy, who accused Samdech Techo Hun Sen of buying shares in Thai energy company',
+      title: 'Sony Unveils Revolutionary A7R VI with 61MP Full-Frame Sensor',
       description:
-        'On September 2, 2025, the Royal Government Spokesperson issued a statement denying false information posted on the Facebook account of Sam Rainsy, falsely alleging that Samdech Techo Hun Sen, President of the Senate, was involved in the purchase of 24% of shares in a major Thai energy company called Bangchak for billions of baht through a South African middleman, but that the Thai Social Security Fund refused to sell it.',
+        'Sony announces its latest flagship mirrorless camera featuring a groundbreaking 61-megapixel back-illuminated sensor, 8K video recording at 30fps, and advanced AI-powered autofocus system. The A7R VI promises to set new standards for professional photography and videography with improved low-light performance and extended battery life.',
       date: '2025-09-02',
       image:
-        'https://oslofreedomforum.com/wp-content/uploads/2024/02/Speaker-Sam-Rainsy-V1.png',
+        'https://images.unsplash.com/photo-1617468264204-92588bd6485a?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
       id: 2,
-      title: 'Cambodia and Laos to strengthen cooperation in border trade',
+      title: 'Canon Announces Major Firmware Update for EOS R5 Mark II',
       description:
-        'On September 1, 2025, Cambodian Prime Minister Samdech Techo Hun Sen and Lao Prime Minister Sonexay Siphandone held a bilateral meeting on the sidelines of the 78th UN General Assembly in New York, USA. They discussed enhancing cooperation in border trade and agreed to expedite the construction of the Vientiane-Vang Tao railway project to boost economic growth and connectivity between the two countries.',
+        'Canon releases a significant firmware update for the EOS R5 Mark II, introducing new creative video modes, enhanced subject tracking, and improved overheating management. The update includes Log3 recording capabilities and advanced zebra patterns for professional filmmakers.',
       date: '2025-09-01',
       image:
-        'https://www.aljazeera.com/wp-content/uploads/2017/08/262a18fdbc3145a69c1a88ccbc3bdea5_18.jpeg',
+        'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=400&fit=crop',
     },
     {
       id: 3,
       title:
-        'Cambodia urges Thailand to release 18 captured soldiers amid ongoing tensions',
+        'iPhone 16 Pro Max Camera System Revolutionizes Mobile Photography',
       description:
-        'The Ministry of National Defence confirmed that the 18 Cambodian soldiers captured by Thai military forces after the ceasefire have not been released. Spokesperson Lt Gen Maly Socheata called on Thailand to promptly return the soldiers to Cambodia.',
+        "Apple's latest iPhone 16 Pro Max introduces a triple-camera system with computational photography breakthroughs. Features include 10x optical zoom, ProRAW Max format, and cinematic video stabilization that rivals professional equipment, making high-quality content creation accessible to everyone.",
       date: '2025-09-01',
       image:
-        'https://s.france24.com/media/display/014b9f50-694a-11f0-9659-005056a97e36/w:1280/p:16x9/000-67NV49F-1.jpg',
+        'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&h=400&fit=crop',
     },
     {
       id: 4,
-      title: 'Cambodia and Thailand agree to a ceasefire after border clashes',
+      title: 'DJI Mavic 4 Pro Drone Sets New Standards for Aerial Videography',
       description:
-        'On August 31, 2025, Cambodia and Thailand agreed to a ceasefire following border clashes that resulted in casualties on both sides. The agreement was reached after high-level talks between the two countries, with both sides committing to de-escalate tensions and work towards a peaceful resolution of their border disputes.',
+        'DJI launches the Mavic 4 Pro with a Hasselblad camera capable of 6K video recording and 48MP stills. The drone features omnidirectional obstacle avoidance, 45-minute flight time, and advanced ActiveTrack 6.0 for seamless subject following in complex environments.',
       date: '2025-08-31',
       image:
-        'https://i0.wp.com/fulcrum.sg/wp-content/uploads/AFP__20250820__69Z83T3__v1__HighRes__CambodiaThailandBorderConflict-e1756139812704.jpg?fit=1248%2C562&ssl=1',
+        'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800&h=400&fit=crop',
     },
     {
       id: 5,
-      title: 'Cambodia, China pledge to deepen trade, investment ties',
+      title: 'Adobe Premiere Pro 2025 Introduces AI-Powered Editing Features',
       description:
-        'Both leaders agree on expanding bilateral trade and investment under the Cambodia-China Free Trade Agreement (CCFTA), citing the need to diversify supply chains and attract high-value industries.',
-      date: '2025-09-2',
+        'Adobe unveils Premiere Pro 2025 with groundbreaking AI tools including automatic scene detection, intelligent color grading, and real-time object removal. The new Sensei-powered features promise to reduce editing time by up to 40% while maintaining professional quality standards.',
+      date: '2025-08-30',
       image:
-        'https://www.idcpc.gov.cn/english2023/ttxw_5749/202302/W020230728406753223084.png',
+        'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&h=400&fit=crop',
     },
   ]
+
   const video = [
     {
-      id: 'brushsggyg',
-      title: 'Videography Basics',
-      description: 'Learn the fundamentals of videography.',
-      date: '2025-09-01',
+      id: 'mastering-cinematic-shots',
+      title: 'Mastering Cinematic Camera Movements',
+      description:
+        'Learn professional camera movement techniques including dolly shots, crane movements, and handheld stabilization to create compelling visual narratives.',
+      date: '2025-09-02',
     },
     {
-      id: 'xvcthryhy',
-      title: 'Advanced Editing Techniques',
+      id: 'color-grading-essentials',
+      title: 'Color Grading Essentials for Filmmakers',
       date: '2025-09-01',
-      description: 'Take your editing skills to the next level.',
+      description:
+        'Master the art of color correction and grading using DaVinci Resolve and Adobe Premiere Pro to enhance your visual storytelling.',
     },
     {
-      id: 'asdzxcyty',
-      title: 'Photography Composition',
+      id: 'portrait-lighting-techniques',
+      title: 'Professional Portrait Lighting Setups',
       date: '2025-09-01',
-      description: 'Master the art of composition in photography.',
+      description:
+        'Explore advanced lighting techniques including key light, fill light, and rim lighting to create stunning professional portraits.',
     },
     {
-      id: 'qweasdzxc',
-      title: 'Lighting for Photos',
-      date: '2025-09-01',
-      description: 'Understand how to use lighting effectively.',
+      id: 'drone-cinematography-guide',
+      title: 'Aerial Cinematography with Drones',
+      date: '2025-08-31',
+      description:
+        'Complete guide to capturing breathtaking aerial footage, including flight planning, composition, and post-production techniques.',
     },
     {
-      id: 'plmoknijn',
-      title: 'Camera Settings Explained',
-      date: '2025-09-01',
-      description: 'Get to know your camera settings inside out.',
+      id: 'macro-photography-masterclass',
+      title: 'Macro Photography: Capturing the Miniature World',
+      date: '2025-08-30',
+      description:
+        'Dive into macro photography techniques, equipment selection, and creative approaches to photographing small subjects in extraordinary detail.',
     },
   ]
   const data = news.filter(
