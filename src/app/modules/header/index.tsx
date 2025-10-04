@@ -21,7 +21,7 @@ export const Header = ({ locale }: HeaderProps) => {
   return (
     <div>
       {/* Full Header */}
-      <div className='hidden min-[770px]:block'>
+      <div className='hidden min-[770px]:block z-7'>
         <header className='flex justify-between bg-inner-background items-center px-20 py-4 max-w-[2050px] mx-auto'>
           <div className='lg:w-20'>
             <Link href='/'>
