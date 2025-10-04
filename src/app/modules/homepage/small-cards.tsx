@@ -2,7 +2,7 @@ import { SpinnerGapIcon } from '@phosphor-icons/react/ssr'
 import { SearchX } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 
 interface Articles {
@@ -18,7 +18,15 @@ interface NewsProp {
 }
 
 export function SmallCards({ data }: NewsProp) {
-  const [view, setView] = useState(true)
+  const [imageStatus, setImageStatus] = useState('loading')
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (imageStatus === 'loading') {
+        setImageStatus('noImage')
+      }
+    }, 2000)
+    return () => clearTimeout(timeoutId)
+  }, [])
   return (
     <div>
       {data.length > 0 ? (
@@ -28,7 +36,7 @@ export function SmallCards({ data }: NewsProp) {
               <div key={item.id}>
                 <Link href={`/articles/${item.id}`}>
                   <div className='w-full flex sm:gap-4 gap-2 rounded-xl overflow-hidden hover:shadow-lg dark:shadow-md dark:hover:shadow-gray-700/80 dark:shadow-gray-800/50 shadow-sm sm:dark:shadow-inner-background sm:shadow-none transition-all duration-200 cursor-pointer'>
-                    {item?.image ? (
+                    {item?.image && (
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -36,8 +44,9 @@ export function SmallCards({ data }: NewsProp) {
                         height={100}
                         className='object-cover lg:w-30 w-25 h-auto'
                       />
-                    ) : (
-                      <div className='flex items-center justify-center lg:w-30 w-100 h-auto animate-pulse dark:bg-gray-500 bg-gray-300'>
+                    )}
+                    {imageStatus === 'loading' && !item?.image && (
+                      <div className='flex items-center justify-center lg:w-30 w-100 h-auto dark:bg-gray-500 bg-gray-300'>
                         <div className='w-100 flex items-center justify-center'>
                           <motion.div
                             className='spinner'
@@ -50,11 +59,20 @@ export function SmallCards({ data }: NewsProp) {
                           >
                             <SpinnerGapIcon
                               size={20}
-                              className='text-gray-500 dark:text-black'
+                              className='text-gray-500 dark:text-black z-4'
                             />
                           </motion.div>
                         </div>
                       </div>
+                    )}
+                    {imageStatus === 'noImage' && !item?.image && (
+                      <Image
+                        src='/image-not-found.jpg'
+                        alt='Image Not Found'
+                        width={100}
+                        height={100}
+                        className='object-cover lg:w-30 w-25 h-auto'
+                      />
                     )}
                     <div className='p-2 flex flex-col gap-2 line-clamp-3 py-2'>
                       <p className='lg:text-[10px] text-[9px] text-foreground'>
