@@ -7,18 +7,22 @@ import { motion } from 'motion/react'
 
 interface Articles {
   id: number | string
-  title: string
-  description: string
-  date?: string
+  title?: string
+  description?: string
+  body?: string
+  published?: boolean
+  updatedAt?: string
   image?: string
 }
 
 interface NewsProp {
-  data: Articles[]
+  data: Articles[] | undefined
 }
 
 export function SmallCards({ data }: NewsProp) {
+  const [loading, setLoading] = useState('Loading...')
   const [imageStatus, setImageStatus] = useState('loading')
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       if (imageStatus === 'loading') {
@@ -29,9 +33,9 @@ export function SmallCards({ data }: NewsProp) {
   }, [])
   return (
     <div>
-      {data.length > 0 ? (
+      {data && data?.length > 0 ? (
         <div className='grid 2xl:grid-cols-3 gap-8 sm:grid-cols-2 grid-cols-1'>
-          {data.map(item => {
+          {data?.map(item => {
             return (
               <div key={item.id}>
                 <Link href={`/articles/${item.id}`}>
@@ -39,7 +43,7 @@ export function SmallCards({ data }: NewsProp) {
                     {item?.image && (
                       <Image
                         src={item.image}
-                        alt={item.title}
+                        alt={item.title ?? ''}
                         width={100}
                         height={100}
                         className='object-cover lg:w-30 w-25 h-auto'
@@ -76,7 +80,7 @@ export function SmallCards({ data }: NewsProp) {
                     )}
                     <div className='p-2 flex flex-col gap-2 line-clamp-3 py-2'>
                       <p className='lg:text-[10px] text-[9px] text-foreground'>
-                        {item.date}
+                        {item.updatedAt}
                       </p>
                       <h2 className='font-semibold line-clamp-2 lg:text-base text-sm'>
                         {item.title}
@@ -91,10 +95,13 @@ export function SmallCards({ data }: NewsProp) {
             )
           })}
         </div>
-      ) : (
+      ) 
+      
+      : (
         <div className='flex items-center justify-center gap-2'>
           <SearchX size={20} />
           <p>No results found</p>
+          {loading}
         </div>
       )}
     </div>
