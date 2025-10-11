@@ -48,11 +48,11 @@ export default async function RootLayout({ children, params }: Props) {
             enableSystem
             disableTransitionOnChange
           >
-            <div>
+            <div className='min-h-screen flex flex-col justify-between bg-inner-background'>
               <div className='sticky -top-1 bg-inner-background border-b-1'>
                 <Header locale={locale} />
               </div>
-              <div className='px-9 sm:px-20 py-10 bg-inner-background'>
+              <div className='px-9 sm:px-20 py-10 bg-inner-background flex-grow'>
                 {children}
               </div>
               <footer className='bg-inner-background border-t-1'>
