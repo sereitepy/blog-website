@@ -72,7 +72,7 @@ export async function updateArticle(id: string, formData: FormData) {
 // delete article
 export async function deleteArticle(id: string) {
   try {
-    const res = await fetch(`articles/${id}`, {
+    const res = await fetch(`${API_URL}/articles/${id}`, {
       method: 'DELETE',
     })
     if (!res.ok) {
@@ -84,4 +84,5 @@ export async function deleteArticle(id: string) {
   } catch (error) {
     return { error: 'Something went wrong' }
   }
+  redirect('/')
 }
