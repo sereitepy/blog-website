@@ -4,22 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
+import { Article } from '@/lib/api'
 
-interface Articles {
-  id: number | string
-  title?: string
-  description?: string
-  body?: string
-  published?: boolean
-  updatedAt?: string
-  image?: string
-}
-
-interface NewsProp {
-  data: Articles[] | undefined
-}
-
-export function SmallCards({ data }: NewsProp) {
+export function SmallCards({ data }: {data: Article[]}) {
   const [loading, setLoading] = useState('Loading...')
   const [imageStatus, setImageStatus] = useState('loading')
 

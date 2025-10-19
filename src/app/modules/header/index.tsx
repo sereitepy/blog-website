@@ -19,7 +19,7 @@ interface HeaderProps {
 export const Header = ({ locale }: HeaderProps) => {
   const pathName = usePathname()
   return (
-    <div>
+    <div className='z-10'>
       {/* Full Header */}
       <div className='hidden min-[770px]:block z-7'>
         <header className='flex justify-between bg-inner-background items-center px-20 py-4 max-w-[2050px] mx-auto'>
@@ -79,7 +79,7 @@ export const Header = ({ locale }: HeaderProps) => {
         </header>
       </div>
       {/* Side Sheet Header for Mobile Screen */}
-      <div className='min-[770px]:hidden max-[770px]:flex'>
+      <div className='min-[770px]:hidden max-[770px]:flex z-7'>
         <div className='flex justify-between items-center px-9 py-4 max-w-[2050px] mx-auto w-full'>
           <div>
             <Sheet>
