@@ -4,13 +4,14 @@ import { getArticle } from '@/lib/api'
 export default async function BlogPostPage({
   params,
 }: {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }) {
-  const article = await getArticle(params.id)
+  const { id } = await params
+  const article = await getArticle(id)
 
   return (
     <>
-      <IndividualArticle id={params.id} article={article} />
+      <IndividualArticle id={id} article={article} />
     </>
   )
 }
