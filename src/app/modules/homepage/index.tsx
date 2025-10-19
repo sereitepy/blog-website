@@ -1,46 +1,32 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Article } from '@/lib/api'
+import { useState } from 'react'
+import { AddArticleButton } from './add-article-button'
 import { SearchInput } from './search'
 import { SmallCards } from './small-cards'
 
-interface Articles {
-  id: number | string
-  title?: string
-  description?: string
-  body?: string
-  published?: boolean
-  updatedAt?: string
-  image?: string
-}
 
-export const HomePage = () => {
+export const HomePage = ({ articles }: {articles: Article[]}) => {
   const [searchInput, setSearchInput] = useState('')
 
-  const [posts, setPosts] = useState<Articles[] | undefined>()
-  const [loading, setLoading] = useState('')
-
-  useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles`)
-      .then(res => res.json())
-      .then(data => setPosts(data))
-      .catch(err => setLoading(`Failed: ${err.message}`))
-  }, [])
-
-  const data = posts?.filter(
+  const data = articles?.filter(
     item =>
       item.title?.toLowerCase().includes(searchInput.toLowerCase()) ||
       item.description?.toLowerCase().includes(searchInput.toLowerCase())
   )
 
-  const videoData = posts?.filter(
+  const videoData = articles?.filter(
     item =>
       item.title?.toLowerCase().includes(searchInput.toLowerCase()) ||
       item.description?.toLowerCase().includes(searchInput.toLowerCase())
   )
   return (
-    <div className='flex flex-col gap-10 items-center justify-center max-w-[2050px] mx-auto'>
-      <SearchInput input={searchInput} setInput={setSearchInput} />
+    <div className='flex flex-col gap-10 items-center justify-center max-w-[2050px] mx-auto z-1'>
+      <div className='flex items-center justify-center w-full gap-5 max-[770px]:gap-2'>
+        <SearchInput input={searchInput} setInput={setSearchInput} />
+        <AddArticleButton />
+      </div>
       <div className='flex flex-col gap-5 w-full'>
         <h3 className='font-bold text-xl hover:underline hover:underline-offset-4 cursor-pointer w-fit flex items-baseline'>
           Recent Articles

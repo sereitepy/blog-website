@@ -4,22 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
+import { Article } from '@/lib/api'
 
-interface Articles {
-  id: number | string
-  title?: string
-  description?: string
-  body?: string
-  published?: boolean
-  updatedAt?: string
-  image?: string
-}
-
-interface NewsProp {
-  data: Articles[] | undefined
-}
-
-export function SmallCards({ data }: NewsProp) {
+export function SmallCards({ data }: { data: Article[] }) {
   const [loading, setLoading] = useState('Loading...')
   const [imageStatus, setImageStatus] = useState('loading')
 
@@ -39,7 +26,7 @@ export function SmallCards({ data }: NewsProp) {
             return (
               <div key={item.id}>
                 <Link href={`/articles/${item.id}`}>
-                  <div className='w-full flex sm:gap-4 gap-2 rounded-xl overflow-hidden hover:shadow-lg dark:shadow-md dark:hover:shadow-gray-700/80 dark:shadow-gray-800/50 shadow-sm sm:dark:shadow-inner-background sm:shadow-none transition-all duration-200 cursor-pointer'>
+                  <div className='min-[770px]:max-h-30 min-[770px]:min-h-30 w-full flex sm:gap-4 gap-2 rounded-xl overflow-hidden hover:shadow-lg dark:shadow-md dark:hover:shadow-gray-700/80 dark:shadow-gray-800/50 shadow-sm sm:dark:shadow-inner-background sm:shadow-none transition-all duration-200 cursor-pointer'>
                     {item?.image && (
                       <Image
                         src={item.image}
@@ -75,7 +62,7 @@ export function SmallCards({ data }: NewsProp) {
                         alt='Image Not Found'
                         width={100}
                         height={100}
-                        className='object-cover lg:w-30 w-25 h-auto'
+                        className='object-cover lg:w-30 w-25 h-auto max-h-100'
                       />
                     )}
                     <div className='p-2 flex flex-col gap-2 line-clamp-3 py-2'>
@@ -95,9 +82,7 @@ export function SmallCards({ data }: NewsProp) {
             )
           })}
         </div>
-      ) 
-      
-      : (
+      ) : (
         <div className='flex items-center justify-center gap-2'>
           <SearchX size={20} />
           <p>No results found</p>

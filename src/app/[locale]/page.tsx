@@ -1,10 +1,12 @@
+import { getArticles } from '@/lib/api'
 import { HomePage } from '../modules/homepage'
 
-export default function Home() {
+export default async function Home() {
+  const articles = await getArticles()
   return (
     <div className='font-sans'>
       <main>
-        <HomePage />
+        <HomePage articles={articles}/>
       </main>
     </div>
   )

@@ -1,20 +1,32 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+import { ReactNode } from "react"
 
-export async function fetchUsers() {
-  const res = await fetch(`${API_URL}/users`);
-  if (!res.ok) throw new Error('Failed to fetch');
-  return res.json();
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
+
+export interface Article {
+  id: string
+  title: string
+  description: string
+  body: string
+  image: string
+  published: boolean
+  createdAt: ReactNode
+  updatedAt: ReactNode
 }
 
-export async function createUser(data: any) {
-  const res = await fetch(`${API_URL}/users`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json' 
-    },
-    body: JSON.stringify(data),
-    credentials: 'include', // if we're using cookies for auth
-  });
-  if (!res.ok) throw new Error('Failed to create');
-  return res.json;
+// get all articles
+export async function getArticles(): Promise<Article[]> {
+  const res = await fetch(`${API_URL}/articles`, {
+    next: { tags: ['articles'] },
+  })
+  if (!res.ok) throw new Error('Failed to fetch articles')
+  return res.json()
+}
+
+// get one article
+export async function getArticle(id: string): Promise<Article> {
+const res = await fetch(`${API_URL}/articles/${id}`, {
+  next: {tags: [`article-${id}`]},
+})
+if (!res.ok) throw new Error('Failed to fetch article...')
+  return res.json()
 }
