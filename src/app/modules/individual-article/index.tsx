@@ -35,7 +35,7 @@ export function IndividualArticle({ article, id }: IndividualArticleProp) {
             height={300}
             className='rounded-lg max-h-100 w-auto object-contain'
           />
-          <div className='flex flex-col gap-4'>
+          <div className='flex flex-col gap-4 justify-baseline w-full'>
             <div className='flex flex-col gap-2'>
               <h2 className='font-semibold text-xl'>Description</h2>
               <h3>{article.description}</h3>
