@@ -2,7 +2,7 @@
 
 import { Article } from '@/lib/api'
 import { useState } from 'react'
-import { AddArticleButton } from './add-article-button'
+import { AddArticleButton } from './create-article-form/add-article-button'
 import { SearchInput } from './search'
 import { SmallCards } from './small-cards'
 
