@@ -32,6 +32,7 @@ export async function createArticle(formData: FormData) {
 
     // revalidate the articles list cache
     revalidateTag('articles')
+    revalidatePath('/')
   } catch (error) {
     return { error: 'Something went wrong' }
   }
