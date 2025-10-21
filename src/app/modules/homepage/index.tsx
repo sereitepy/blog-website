@@ -2,7 +2,7 @@
 
 import { Article } from '@/lib/api'
 import { useState } from 'react'
-import { AddArticleButton } from './create-article-form/add-article-button'
+import { CreateArticle } from './article-form-field/create-article'
 import { SearchInput } from './search'
 import { SmallCards } from './small-cards'
 
@@ -25,7 +25,7 @@ export const HomePage = ({ articles }: {articles: Article[]}) => {
     <div className='flex flex-col gap-10 items-center justify-center max-w-[2050px] mx-auto z-1'>
       <div className='flex items-center justify-center w-full gap-5 max-[770px]:gap-2'>
         <SearchInput input={searchInput} setInput={setSearchInput} />
-        <AddArticleButton />
+        <CreateArticle />
       </div>
       <div className='flex flex-col gap-5 w-full'>
         <h3 className='font-bold text-xl hover:underline hover:underline-offset-4 cursor-pointer w-fit flex items-baseline'>
