@@ -67,7 +67,7 @@ export async function updateArticle(id: string, formData: FormData) {
   } catch (error) {
     return { error: 'Something went wrong' }
   }
-  redirect('/')
+  redirect(`/articles/${id}`)
 }
 
 // delete article

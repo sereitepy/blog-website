@@ -1,4 +1,5 @@
 import { IndividualArticle } from '@/app/modules/individual-article'
+import { updateArticle } from '@/lib/actions'
 import { getArticle } from '@/lib/api'
 
 export default async function BlogPostPage({
@@ -8,10 +9,11 @@ export default async function BlogPostPage({
 }) {
   const { id } = await params
   const article = await getArticle(id)
+  const previousContent = updateArticle.bind(null, id)
 
   return (
     <>
-      <IndividualArticle id={id} article={article} />
+      <IndividualArticle id={id} article={article} previousContent={previousContent} />
     </>
   )
 }
