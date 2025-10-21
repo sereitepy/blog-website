@@ -33,12 +33,12 @@ export const HomePage = ({ articles }: {articles: Article[]}) => {
         </h3>
         <SmallCards data={data} />
       </div>
-      <div className='flex flex-col gap-5 w-full'>
+      {/* <div className='flex flex-col gap-5 w-full'>
         <h3 className='font-bold text-xl hover:underline hover:underline-offset-4 cursor-pointer w-fit flex items-baseline'>
           Videography Articles
         </h3>
         <SmallCards data={videoData} />
-      </div>
+      </div> */}
     </div>
   )
 }

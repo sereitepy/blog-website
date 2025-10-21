@@ -18,9 +18,15 @@ import { Textarea } from '@/components/ui/textarea'
 import { SubmitButton } from './submit-button'
 import { ChangeEvent } from 'react'
 import { Checkbox } from '@/components/ui/checkbox'
+import { Article } from '@/lib/api'
 
 interface ArticleFormProps {
-  handleSubmit: (formData: FormData) => Promise<void>
+  update?: boolean
+  article?: Article
+  handleSubmit:
+    | (string | ((formData: FormData) => Promise<void>))
+    | (string | ((formData: FormData) => Promise<any>))
+    | undefined
   handleChange: (e: ChangeEvent<HTMLTextAreaElement>) => void
   maxLength: number
   value: string
@@ -28,6 +34,8 @@ interface ArticleFormProps {
 }
 
 export default function ArticleForm({
+  update,
+  article,
   handleSubmit,
   handleChange,
   maxLength,
@@ -38,7 +46,9 @@ export default function ArticleForm({
     <div>
       <FieldSet>
         <FieldLegend>
-          <DialogTitle>Create New Article</DialogTitle>
+          <DialogTitle>
+            {update ? 'Update this Article' : 'Create New Article'}
+          </DialogTitle>
         </FieldLegend>
         <DialogDescription>
           This Article will be displayed on your website imediately once
@@ -53,6 +63,7 @@ export default function ArticleForm({
                 id='title'
                 name='title'
                 required
+                defaultValue={update ? article?.title : ''}
                 autoComplete='off'
                 placeholder='Photography...'
               />
@@ -69,6 +80,7 @@ export default function ArticleForm({
                 name='description'
                 placeholder='Describe your article here!'
                 required
+                // defaultValue={update ? article?.description : ''}
                 className='min-h-[100px] max-h-[200px] resize-none sm:min-w-[300px]'
                 autoComplete='off'
                 rows={4}
@@ -91,6 +103,7 @@ export default function ArticleForm({
                 id='body'
                 name='body'
                 required
+                defaultValue={update ? article?.body : ''}
                 placeholder='Describe your article here!'
                 className='min-h-[200px] max-h-[500px] resize-none sm:min-w-[300px]'
                 autoComplete='off'
@@ -106,6 +119,7 @@ export default function ArticleForm({
               <FieldLabel htmlFor='image'>Image</FieldLabel>
               <Input
                 required
+                defaultValue={update ? article?.image : ''}
                 id='image'
                 name='image'
                 autoComplete='off'
@@ -144,7 +158,7 @@ export default function ArticleForm({
                   Cancel
                 </Button>
               </DialogClose>
-              <SubmitButton />
+              <SubmitButton update={update} />
             </Field>
           </FieldGroup>
         </form>

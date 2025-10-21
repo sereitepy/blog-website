@@ -1,27 +1,40 @@
 import { Article } from '@/lib/api'
-import DeleteArticle from '../delete-article'
 import { ArrowLeftIcon } from '@phosphor-icons/react/ssr'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import DeleteArticle from '../homepage/article-form-field/delete-article'
+import { UpdateArticle } from '../homepage/article-form-field/update-article'
 
 interface IndividualArticleProp {
   id: string
   article: Article
+  previousContent: (formData: FormData) => Promise<{ error: any }>
 }
 
-export function IndividualArticle({ article, id }: IndividualArticleProp) {
+export function IndividualArticle({
+  article,
+  id,
+  previousContent,
+}: IndividualArticleProp) {
   return (
     <div className='max-w-5xl mx-auto'>
       {article ? (
         <div className='flex sm:items-center justify-center flex-col gap-4 w-full'>
           <div className='flex items-center justify-between w-full'>
             <Link href={'/'} className='self-start'>
-              <div className='py-1 flex gap-2 items-center p-3 hover:bg-gray-100 border-1 dark:hover:bg-gray-800 rounded-full w-fit cursor-pointer '>
+              <div className='py-1 flex gap-2 items-center p-3 hover:bg-gray-100 border-1 dark:hover:bg-gray-800 rounded-full w-full cursor-pointer '>
                 <ArrowLeftIcon size={16} />
                 <p className='text-sm'>Go Back</p>
               </div>
             </Link>
-            <DeleteArticle id={id} />
+            <div className='flex items-center gap-3'>
+              <UpdateArticle
+                id={id}
+                previousContent={previousContent}
+                article={article}
+              />
+              <DeleteArticle id={id} />
+            </div>
           </div>
           <h1 className='text-2xl font-bold sm:text-center'>{article.title}</h1>
           <p className='text-sm'>Published Date: {article.updatedAt}</p>
