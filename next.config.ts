@@ -6,12 +6,14 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname:
-          '**', // Replace with your allowed domain
+        hostname: '**', // Replace with your allowed domain
         port: '',
         pathname: '/**', // Restrict to a specific path if needed
       },
     ],
+  },
+  experimental: {
+    globalNotFound: true,
   },
 }      
 

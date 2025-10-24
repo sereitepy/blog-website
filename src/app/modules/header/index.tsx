@@ -11,13 +11,16 @@ import { ListIcon } from '@phosphor-icons/react/ssr'
 import Image from 'next/image'
 import { LanguageSwitcher } from '../language-switch'
 import { ThemeSwitcher } from '../theme-switch'
+import { useLocale } from 'next-intl'
 
 interface HeaderProps {
-  locale: string | 'en' | 'km'
+  locale?: string | 'en' | 'km'
 }
 
 export const Header = ({ locale }: HeaderProps) => {
   const pathName = usePathname()
+  const locale_not_found = useLocale()
+  
   return (
     <div className='z-10'>
       {/* Full Header */}
@@ -73,7 +76,7 @@ export const Header = ({ locale }: HeaderProps) => {
           </div>
 
           <div className='flex items-center gap-4 lg:w-20'>
-            <LanguageSwitcher locale={locale} />
+            <LanguageSwitcher locale={locale ?? locale_not_found} />
             <ThemeSwitcher align='end' />
           </div>
         </header>
@@ -149,7 +152,7 @@ export const Header = ({ locale }: HeaderProps) => {
               />
             </Link>
           </div>
-          <LanguageSwitcher locale={locale} />
+          <LanguageSwitcher locale={locale ?? locale_not_found} />
         </div>
       </div>
     </div>

@@ -12,5 +12,10 @@
       "dark": "Dark",
       "system": "System"
     }
+  },
+  "notFound": {
+    "title": "404 - This page does not exist",
+    "body": "Sorry, this page hasn't been worked on yet",
+    "buttonMessage": "Return Home"
   }
 }
