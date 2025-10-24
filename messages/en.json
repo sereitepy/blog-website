@@ -3,15 +3,36 @@
     "title": "Hello world!"
   },
   "header": {
+    "navigation": {
+      "title": "Navigation Menu",
+      "home": "Home",
+      "general": "General Media",
+      "photography": "Photography",
+      "video": "Videography",
+      "about": "About"
+    },
     "languageSwitcher": {
       "khmer": "Khmer",
       "english": "English"
     },
     "themeSwitcher": {
+      "title": "Theme Switcher",
       "light": "Light",
       "dark": "Dark",
-      "system": "System"
+      "system": "System",
+      "darkMode": "Dark Mode",
+      "lightMode": "Light Mode"
     }
+  },
+  "footer": {
+    "description": "Lens Pro Media, led by media expert Kimsour, offers photography and videography education to empower Cambodia's next generation with media knowledge.",
+    "about": "About",
+    "resources": "Resources",
+    "support": "Support",
+    "randomLink": "Random Link",
+    "copyRight": "Lens Pro Media All rights reserved",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Term's of Service"
   },
   "notFound": {
     "title": "404 - This page does not exist",
