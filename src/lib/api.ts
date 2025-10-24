@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { ReactNode } from 'react'
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
 
@@ -18,15 +18,17 @@ export async function getArticles(): Promise<Article[]> {
   const res = await fetch(`${API_URL}/articles`, {
     next: { tags: ['articles'] },
   })
-  if (!res.ok) throw new Error('Failed to fetch articles')
+  if (!res.ok) {
+    throw new Error('Failed to fetch articles')
+  }
   return res.json()
 }
 
 // get one article
 export async function getArticle(id: string): Promise<Article> {
-const res = await fetch(`${API_URL}/articles/${id}`, {
-  next: {tags: [`article-${id}`]},
-})
-if (!res.ok) throw new Error('Failed to fetch article...')
+  const res = await fetch(`${API_URL}/articles/${id}`, {
+    next: { tags: [`article-${id}`] },
+  })
+  if (!res.ok) throw new Error('Failed to fetch article...')
   return res.json()
 }

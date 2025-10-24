@@ -28,7 +28,7 @@ export default function DeleteArticle({ id }: { id: string }) {
         <DialogTrigger>
           <ButtonIconOutline />
         </DialogTrigger>
-        <DialogContent className='max-[770px]:max-w-[83%]'>
+        <DialogContent className='mx-auto max-w-[83%]'>
           {isPending ? (
             <div className='h-22 flex items-center justify-center'>
               loading...
