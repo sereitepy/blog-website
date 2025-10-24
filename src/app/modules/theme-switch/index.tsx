@@ -30,16 +30,18 @@ export function ThemeSwitcher({ align }: ThemeSwitcherProps) {
             <Moon className='absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 dark:cursor-pointer' />
             <span className='sr-only'>Toggle theme</span>
           </Button>
-          <p className='dark:hidden flex text-xs sm:hidden'>Light Mode</p>
-          <p className='hidden dark:flex text-xs sm:dark:hidden'>
-            Dark Mode
+          <p className='dark:hidden flex text-md min-[800px]:hidden'>
+            {t('lightMode')}
+          </p>
+          <p className='hidden dark:flex text-md min-[800px]:dark:hidden'>
+            {t('darkMode')}
           </p>
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent align={align}>
         <DropdownMenuItem
           onClick={() => setTheme('light')}
-          className='flex justify-between items-center cursor-pointer'
+          className='flex justify-between items-center cursor-pointer text-md'
         >
           <span className='flex items-center gap-2 cursor-pointer'>
             <Sun className='h-[1.2rem] w-[1.2rem] scale-100 rotate-0' />
@@ -50,7 +52,7 @@ export function ThemeSwitcher({ align }: ThemeSwitcherProps) {
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme('dark')}
-          className='flex justify-between items-center cursor-pointer'
+          className='flex justify-between items-center cursor-pointer text-md'
         >
           <span className='flex items-center gap-2'>
             <Moon className='h-[1.2rem] w-[1.2rem] scale-100 rotate-0' />
@@ -61,7 +63,7 @@ export function ThemeSwitcher({ align }: ThemeSwitcherProps) {
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme('system')}
-          className='cursor-pointer'
+          className='cursor-pointer text-md'
         >
           <span className='flex items-center gap-2'>
             <Settings className='h-[1.2rem] w-[1.2rem] scale-100 rotate-0' />

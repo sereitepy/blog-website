@@ -11,7 +11,7 @@ import { ListIcon } from '@phosphor-icons/react/ssr'
 import Image from 'next/image'
 import { LanguageSwitcher } from '../language-switch'
 import { ThemeSwitcher } from '../theme-switch'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 interface HeaderProps {
   locale?: string | 'en' | 'km'
@@ -20,13 +20,14 @@ interface HeaderProps {
 export const Header = ({ locale }: HeaderProps) => {
   const pathName = usePathname()
   const locale_not_found = useLocale()
-  
+  const t = useTranslations('header.navigation')
+  const k = useTranslations('header.themeSwitcher')
   return (
-    <div className='z-10'>
+    <div className='z-10 transition-all delay-150 ease-in-out'>
       {/* Full Header */}
-      <div className='hidden min-[770px]:block z-7'>
-        <header className='flex justify-between bg-inner-background items-center px-20 py-4 max-w-[2050px] mx-auto'>
-          <div className='lg:w-20'>
+      <div className='hidden min-[800px]:block z-7'>
+        <header className='flex justify-between bg-inner-background items-center px-15 min-[801px]:px-20 py-4 lg:max-w-[2050px] mx-auto'>
+          <div className='min-[801px]:w-20 w-17'>
             <Link href='/'>
               <Image
                 src='/logo.png'
@@ -37,52 +38,52 @@ export const Header = ({ locale }: HeaderProps) => {
               />
             </Link>
           </div>
-          <div className='flex justify-center items-center gap-6 lg:text-sm text-xs font-semibold'>
+          <div className='flex justify-center items-center gap-6 lg:text-lg text-md font-semibold'>
             <p
               className={`hover:underline hover:underline-offset-4 ${
                 pathName === '/' && 'underline underline-offset-4'
               }`}
             >
-              <Link href='/'>Home</Link>
+              <Link href='/'>{t('home')}</Link>
             </p>
             <p
               className={`hover:underline hover:underline-offset-4 ${
                 pathName === '/general' && 'underline underline-offset-4'
               }`}
             >
-              <Link href='/general'>General Media</Link>
+              <Link href='/general'>{t('general')}</Link>
             </p>
             <p
               className={`hover:underline hover:underline-offset-4 ${
                 pathName === '/photography' && 'underline underline-offset-4'
               }`}
             >
-              <Link href='/photography'>Photography</Link>
+              <Link href='/photography'>{t('photography')}</Link>
             </p>
             <p
               className={`hover:underline hover:underline-offset-4 ${
                 pathName === '/videography' && 'underline underline-offset-4'
               }`}
             >
-              <Link href='/videography'>Videography</Link>
+              <Link href='/videography'>{t('video')}</Link>
             </p>
             <p
               className={`hover:underline hover:underline-offset-4 ${
                 pathName === '/about' && 'underline underline-offset-4'
               }`}
             >
-              <Link href='/about'>About</Link>
+              <Link href='/about'>{t('about')}</Link>
             </p>
           </div>
 
-          <div className='flex items-center gap-4 lg:w-20'>
+          <div className='flex items-center gap-2 min-[840px]:gap-4 min-[840px]:w-20 w-17'>
             <LanguageSwitcher locale={locale ?? locale_not_found} />
             <ThemeSwitcher align='end' />
           </div>
         </header>
       </div>
       {/* Side Sheet Header for Mobile Screen */}
-      <div className='min-[770px]:hidden max-[770px]:flex z-7'>
+      <div className='min-[800px]:hidden max-[800px]:flex z-7'>
         <div className='flex justify-between items-center px-9 py-4 max-w-[2050px] mx-auto w-full'>
           <div>
             <Sheet>
@@ -90,15 +91,15 @@ export const Header = ({ locale }: HeaderProps) => {
                 <ListIcon size={20} />
               </SheetTrigger>
               <SheetContent side='left'>
-                <div className='px-5 py-10'>
-                  <SheetTitle className='py-5'>Navigation Menu</SheetTitle>
-                  <div className='flex flex-col gap-2 text-xs font-semibold'>
+                <div className='px-5 py-10 overflow-auto'>
+                  <SheetTitle className='py-5 text-xl'>{t('title')}</SheetTitle>
+                  <div className='flex flex-col gap-2 text-md font-semibold'>
                     <p
                       className={`hover:underline hover:underline-offset-4 ${
                         pathName === '/' && 'underline underline-offset-4'
                       }`}
                     >
-                      <Link href='/'>Home</Link>
+                      <Link href='/'>{t('home')}</Link>
                     </p>
                     <p
                       className={`hover:underline hover:underline-offset-4 ${
@@ -106,7 +107,7 @@ export const Header = ({ locale }: HeaderProps) => {
                         'underline underline-offset-4'
                       }`}
                     >
-                      <Link href='/general'>General Media</Link>
+                      <Link href='/general'>{t('general')}</Link>
                     </p>
                     <p
                       className={`hover:underline hover:underline-offset-4 ${
@@ -114,7 +115,7 @@ export const Header = ({ locale }: HeaderProps) => {
                         'underline underline-offset-4'
                       }`}
                     >
-                      <Link href='/photography'>Photography</Link>
+                      <Link href='/photography'>{t('photography')}</Link>
                     </p>
                     <p
                       className={`hover:underline hover:underline-offset-4 ${
@@ -122,18 +123,18 @@ export const Header = ({ locale }: HeaderProps) => {
                         'underline underline-offset-4'
                       }`}
                     >
-                      <Link href='/videography'>Videography</Link>
+                      <Link href='/videography'>{t('video')}</Link>
                     </p>
                     <p
                       className={`hover:underline hover:underline-offset-4 ${
                         pathName === '/about' && 'underline underline-offset-4'
                       }`}
                     >
-                      <Link href='/about'>About</Link>
+                      <Link href='/about'>{t('about')}</Link>
                     </p>
                   </div>
 
-                  <SheetTitle className='py-5'>Theme Switcher</SheetTitle>
+                  <SheetTitle className='py-5 text-xl'>{k('title')}</SheetTitle>
                   <div>
                     <ThemeSwitcher align='start' />
                   </div>

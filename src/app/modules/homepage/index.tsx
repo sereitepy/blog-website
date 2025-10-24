@@ -17,7 +17,7 @@ export const HomePage = ({ articles }: { articles: Article[] }) => {
 
   return (
     <div className='flex flex-col gap-10 items-center justify-center z-1'>
-      <div className='flex items-center max-[770px]:justify-between justify-center w-full gap-5 max-[400px]:gap-2 max-[770px]'>
+      <div className='flex items-center max-[770px]:justify-between justify-center w-full gap-5 max-[400px]:gap-2'>
         <SearchInput input={searchInput} setInput={setSearchInput} />
         <CreateArticle />
       </div>
