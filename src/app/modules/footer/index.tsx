@@ -37,9 +37,9 @@ export const Footer = () => {
     <footer className='bg-inner-background max-w-[2050px] mx-auto sm:py-15 sm:px-20 px-10 py-8'>
       <div className='flex flex-col gap-8'>
         {/* upper section */}
-        <div className='flex sm:flex-row flex-col gap-6 sm:gap-2 justify-between min-[350px]:items-center'>
+        <div className='flex sm:flex-row flex-col gap-8 sm:gap-0 justify-between items-center'>
           {/* left section */}
-          <div className='flex flex-col gap-6 xs:w-[20%] sm:w-[40%] md:w-[60%] xl:w-[75%]'>
+          <div className='flex flex-col gap-4 sm:w-[45%] xl:w-[60%]'>
             <Image
               src='/logo.png'
               alt="Len's Pro Media Logo"
@@ -47,32 +47,32 @@ export const Footer = () => {
               height={55}
               className='h-auto w-15'
             />
-            <p className='text-md sm:w-[80%] lg:text-lg'>{t('description')}</p>
+            <p className='text-xs sm:w-[80%] lg:text-sm'>{t('description')}</p>
             <div className='flex gap-3 cursor-pointer'>
-              <XLogoIcon size={20} />
-              <InstagramLogoIcon size={20} />
-              <LinkedinLogoIcon size={20} />
+              <XLogoIcon size={18} />
+              <InstagramLogoIcon size={18} />
+              <LinkedinLogoIcon size={18} />
             </div>
           </div>
 
           {/* right side */}
-          <div className='grid grid-cols-3 max-[350px]:grid-cols-2 gap-12 max-[450px]:gap-5 sm:gap-4 sm:w-[60%] xl:w-[50%]'>
+          <div className='grid grid-cols-3 sm:gap-4 gap-5 max-[400px]:gap-4 sm:w-[55%] xl:w-[40%]'>
             {footerLinks.map(item => {
               return (
                 <div
                   key={item.id}
-                  className='flex flex-col sm:gap-4 gap-2 cursor-pointer sm:w-fit sm:ml-auto w-full'
+                  className='flex flex-col sm:gap-2 gap-1 cursor-pointer w-fit ml-auto'
                 >
-                  <h3 className='font-semibold sm:text-lg text-md'>
+                  <h3 className='ont-semibold sm:text-base text-sm'>
                     {item.title}
                   </h3>
-                  <p className='sm:text-sm max-[450px]:text-sm text-[16px] hover:underline hover:underline-offset-4 lg:text-[16.5px]'>
+                  <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
                     {item.details}
                   </p>
-                  <p className='sm:text-sm max-[450px]:text-sm text-[16px] hover:underline hover:underline-offset-4 lg:text-[16.5px]'>
+                  <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
                     {item.software}
                   </p>
-                  <p className='sm:text-sm max-[450px]:text-sm text-[16px] hover:underline hover:underline-offset-4 lg:text-[16.5px]'>
+                  <p className='sm:text-xs text-[11px] hover:underline hover:underline-offset-4 lg:text-sm'>
                     {item.articles}
                   </p>
                 </div>
@@ -81,11 +81,11 @@ export const Footer = () => {
           </div>
         </div>
         {/* lower section */}
-        <div className='flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center text-sm'>
+        <div className='flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center text-xs'>
           <div>
             &copy;{year} {t('copyRight')}
           </div>
-          <div className='flex gap-4 min-[350px]:items-center sm:text-md text-sm cursor-pointer max-[350px]:flex-col'>
+          <div className='flex gap-4 items-center sm:text-xs/3 text-[10px] cursor-pointer'>
             <p className='hover:underline hover:underline-offset-4'>
               {t('privacyPolicy')}
             </p>
