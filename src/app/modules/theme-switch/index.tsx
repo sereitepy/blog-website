@@ -30,10 +30,10 @@ export function ThemeSwitcher({ align }: ThemeSwitcherProps) {
             <Moon className='absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 dark:cursor-pointer' />
             <span className='sr-only'>Toggle theme</span>
           </Button>
-          <p className='dark:hidden flex text-md min-[800px]:hidden'>
+          <p className='dark:hidden flex text-md min-[770px]:hidden'>
             {t('lightMode')}
           </p>
-          <p className='hidden dark:flex text-md min-[800px]:dark:hidden'>
+          <p className='hidden dark:flex text-md min-[770px]:dark:hidden'>
             {t('darkMode')}
           </p>
         </div>
