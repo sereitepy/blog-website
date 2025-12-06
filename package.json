@@ -21,7 +21,7 @@
     "flag-icons": "^7.5.0",
     "lucide-react": "^0.542.0",
     "motion": "^12.23.12",
-    "next": "15.5.2",
+    "next": "^15.5.7",
     "next-intl": "^4.3.5",
     "next-themes": "^0.4.6",
     "react": "19.1.0",
